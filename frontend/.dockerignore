@@ -1,0 +1,8 @@
+Dockerfile
+node_modules
+.editorconfig
+.eslintrc.js
+.gitignore
+.prettierrc
+example.env
+README.md

@@ -1,0 +1,39 @@
+version: "3.8"
+
+services:
+
+  api:
+    container_name: "pns-api"
+    image: "python:3-alpine"
+    restart: "always"
+    ports:
+      - "5000:5000"
+    links:
+      - db
+    depends_on: 
+      - db
+
+  app:
+    container_name: "pns-app"
+    build: "./frontend"
+    image: "mentoring-app"
+    restart: "always"
+    ports: "3000:3000"
+    environment: 
+      NODE_ENV: "Development"
+    links:
+      - api
+    depends_on: 
+      - api
+
+  db:
+    container-name: "pns-db"
+    image: "postgres:11"
+    restart: "always"
+    ports:
+      - "5432:5432"
+    environment: 
+      POSTGRES_USER: "pns"
+      POSTGRES_PASSWORD: "PNS.Super-Secret$2020!"
+    volumes:
+      - "./data/pgdata:/var/lib/postgresql/data"
