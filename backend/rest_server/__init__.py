@@ -3,5 +3,5 @@
 from flask_restful import Api
 from rest_server.controller.index import IndexController
 
-restApi = Api()
-restApi.add_resource(IndexController, '/')
+rest_api = Api()
+rest_api.add_resource(IndexController, '/')
