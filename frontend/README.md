@@ -1,6 +1,6 @@
-# mentoring-app
+# Frontend
 
-> The frontend of the mentoring-codebase project
+> The frontend of the python-nuxt-starter project
 
 ## Build Setup
 
